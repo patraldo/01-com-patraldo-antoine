@@ -1,20 +1,15 @@
-import preprocess from "svelte-preprocess";
-import adapter from "@sveltejs/adapter-node";
+import adapter from "@sveltejs/adapter-cloudflare";
 
 /** @type {import('@sveltejs/kit').Config} */
-const config = {
-	// Consult https://github.com/sveltejs/svelte-preprocess
-	// for more information about preprocessors
-	preprocess: preprocess(),
+export default {
+kit: {
+adapter: adapter({
+routes: {
+include: ['/*'],
+	     exclude: ['<all>']
+	     }
 
-	kit: {
-		adapter: adapter({
-			// default options are shown
-			out: "build",
-			precompress: false,
-			envPrefix: "APATCOM_",
-		}),
-	},
+	     })
+	     }
 
-};
-export default config;
+	     };

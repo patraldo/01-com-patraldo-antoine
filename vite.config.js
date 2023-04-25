@@ -1,11 +1,10 @@
+export default config;
+
+// vite.config.js
 import { sveltekit } from '@sveltejs/kit/vite';
 
 /** @type {import('vite').UserConfig} */
 const config = {
-	plugins: [sveltekit()],
-	ssr: {
-		noExternal: ['devalue']
-	}
+  plugins: [sveltekit()]
 };
 
-export default config;
